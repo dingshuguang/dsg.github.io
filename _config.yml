@@ -2,9 +2,9 @@
 title: 丁曙光的博客
 email: dingshuguang1@gmail.com
 description: 分享 思考 兴趣
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dingshuguang.ml" # the base hostname & protocol for your site
-google_analytics: "UA-XXXXXXXX-X"
+baseurl: "https://dingshuguang.ga" # the subpath of your site, e.g. /blog
+url: "https://dingshuguang.ga" # the base hostname & protocol for your site
+#google_analytics: "UA-XXXXXXXX-X"
 
 # User Settings
 username: 丁曙光
@@ -37,7 +37,7 @@ svg_color: "#ff0a16"
 # For external links add external: true
 links:
   - title: 首页
-    url: /dingshuguang.ga
+    url: http://dingshuguang.ga
   - title: 关于
     url: /about/
   - title: 链接
