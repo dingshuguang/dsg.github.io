@@ -29,8 +29,8 @@ paginate_path: "/page/:num/"
 svg_color: "#ff0a16"
 
 # Plugins
-plugins:
-  - 丁曙光
+#plugins:
+  - 
   - 
 
 # Links to include in menu navigation
