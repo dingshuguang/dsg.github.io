@@ -7,7 +7,7 @@ url: "https://dingshuguang.ga" # the base hostname & protocol for your site
 #google_analytics: "UA-XXXXXXXX-X"
 
 # User Settings
-username: 丁曙光
+username: Dingshuguang's blog
 user_description: 不识庐山真面目 只缘身在此山中.
 #disqus_username: disqus_username
 
@@ -37,11 +37,11 @@ svg_color: "#ff0a16"
 # For external links add external: true
 links:
   - title: 首页
-    url: http://dingshuguang.ga
-  - title: 关于
+    url: "http://dingshuguang.ga"
+  #- title: 关于
     url: /about/
-  - title: 链接
+  #- title: 链接
     url: /contact/
 
 # Exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+#exclude: ['package.json', 'src', 'node_modules']
