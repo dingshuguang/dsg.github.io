@@ -1,6 +1,10 @@
-*.gem
-.bundle
-.sass-cache
-_site
-Gemfile.lock
+.idea
 .DS_Store
+.sass-cache
+Gemfile.lock
+package-json.lock
+_site
+node_modules
+_drafts
+!*/_config.yml
+/_config.yml

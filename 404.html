@@ -1,38 +1,21 @@
 ---
-title: Page Not Found
+layout: default
+title: 404
+description: The page you are looking for couldn't be found.
+permalink: /404/
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	{%- include head.html -%}
-	<style>
-	h1 {
-		background-color: #eee;
-		width: 220px;
-		height: 220px;
-		border-radius: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center
-	}
-	body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		font-size: 20px;
-		height: 80vh;
-	}
-	p {
-		font-size: 1.5em;
-		text-align: center;
-		margin: 0;
-		line-height: 2em;
-	}
-	</style>
-</head>
-<body>
-	<h1>404</h1>
-	<p>Page not found.</p>
-</body>
-</html>
+
+<style type="text/css" media="screen">
+  .container {
+    margin: 0px auto;
+    max-width: 600px;
+    text-align: center;
+    padding-top: 60px;
+  }
+</style>
+
+<div class="container">
+  <img src="/assets/img/404.gif" width="100%" alt="404 - Page not found">
+  <p><strong>Page not found :(</strong></p>
+  <p>I'm sorry. We couldn't find the page you are looking for.</p>
+</div>
