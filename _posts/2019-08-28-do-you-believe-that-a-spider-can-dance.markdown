@@ -5,10 +5,8 @@ title: OK吗
 subtitle: 副标题
 description: 测试内容
 category: null
-image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559824306/theme13_dshbqx.jpg
-optimized_image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559824306/theme13_dshbqx.jpg
+image: >
+optimized_image: >
 tags: null
 author: thiagorossener
 ---
