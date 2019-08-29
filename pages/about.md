@@ -6,13 +6,11 @@ permalink: /about/
 menu: true
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Thiago Rossener" width="200">
 
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+网站挪地方了，这个是从服务器上搬过来的。变成静态网站了，好处是化繁为简，速度更快了，模板依然采用的是作者的，作者的名字在网站的最下方。
+网站的内容风格不会有太大变化，只是主题有所区别。啰啰嗦嗦的写一些爱听与不爱听的话。
+网站托管在GitHub上，码农的大家园。
+
+联系我dingshuguang1@gmail.com
