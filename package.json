@@ -1,13 +1,9 @@
 {
-  "name": "jekflix-template",
-  "version": "2.0.0",
-  "description": "A Jekyll theme inspired by Netflix",
+  "name": "dingshuguang's blog",
+  "version": 
+  "description": 
   "main": "gulpfile.js",
-  "homepage": "https://github.com/thiagorossener/jekflix-template.git#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thiagorossener/jekflix-template.git"
-  },
+  "homepage": "https://dingshuguang.ml",
   "keywords": [
     "jekyll",
     "template",
@@ -15,11 +11,8 @@
     "blog",
     "netlify"
   ],
-  "author": "Thiago Rossener",
+  "author": "dingshuguang",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/thiagorossener/jekflix-template/issues"
-  },
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
     "browser-sync": "^2.26.7",
