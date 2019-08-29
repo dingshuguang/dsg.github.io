@@ -3,7 +3,7 @@ date: 2019-07-28 16:26:40
 layout: post
 title: 性本善
 subtitle:
-description: 昨晚自己捣腾了一下网站，结果把原来的网站源码给误删了，经过一天的时间，又恢复了，换了主题。可惜我的第一篇文章已经找不到了
+description: 人之初，性本善。基督耶稣讲人是有罪的。佛家讲人是有业力的。因因果果
 image: https://res.cloudinary.com/ddsg/image/upload/c_fit,h_399,w_760/v1567070792/leonard-cotte-c1Jp-fo53U8-unsplash_oz1uko.jpg
 optimized_image: https://res.cloudinary.com/ddsg/image/upload/c_fit,h_200,w_380/v1567070792/leonard-cotte-c1Jp-fo53U8-unsplash_oz1uko.jpg
 category: life
