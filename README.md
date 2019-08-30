@@ -1,8 +1,13 @@
-Demo: [http://webjeda.com/vyaasa](http://webjeda.com/vyaasa)
+Grayscale Jekyll theme
+=========================
 
-## Installation
-* Fork the repository
-* Go to settings and set Github Pages source as master.
-* Your new site should be ready.
+Jekyll theme based on [Grayscale bootstrap theme ](http://ironsummitmedia.github.io/startbootstrap-grayscale/)
 
-For more themes visit - [https://jekyll-themes.com](https://jekyll-themes.com)
+## Demo
+View this jekyll theme in action [here](https://jeromelachaud.github.io/grayscale-theme)
+
+## Screenshot
+![screenshot](https://raw.githubusercontent.com/jeromelachaud/grayscale-theme/master/screenshot.png)
+
+=========
+For more details, read the [documentation](http://jekyllrb.com/)

@@ -1,27 +1,14 @@
----
-layout: compress
----
 <!DOCTYPE html>
 <html>
-
-  {% include head.html %}
-
-  <body>
-   
-     <div class="wrapper">
-      {% include color-bar.html %}
+    {% include head.html %}
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    {% include nav.html %}
     {% include header.html %}
-   </div>
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-   <div class="wrapper">
+    {% include about.html %}
+    {% include download.html %}
+    {% include contact.html %}
+    {% include map.html %}
     {% include footer.html %}
-   </div>
-   {% if site.analytics %}
-   {% include analytics.html %}
-   {% endif %}
-  </body>
+    {% include js.html %}
+    </body>
 </html>
