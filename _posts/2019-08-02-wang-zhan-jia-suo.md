@@ -4,8 +4,8 @@ layout: post
 title: 给网站加个绿锁
 subtitle: 
 description: 如果细心的话你会看到，打开我的网站在网址的最左边出现一个小绿锁的标志，后边紧跟着是HTTPS，没错，这就是我说的绿锁。
-image: https://res.cloudinary.com/ddsg/image/upload/c_scale,h_399,w_760/v1567213319/%E7%BB%BF%E9%94%81_j0kye1.jpg
-optimized_image: https://res.cloudinary.com/ddsg/image/upload/c_scale,h_200,w_380/v1567213319/%E7%BB%BF%E9%94%81_j0kye1.jpg
+image: https://res.cloudinary.com/ddsg/image/upload/c_scale,h_399,w_760/v1567214072/%E7%BB%BF%E9%94%81_xf0rwf.jpg
+optimized_image: https://res.cloudinary.com/ddsg/image/upload/c_scale,h_200,w_380/v1567214072/%E7%BB%BF%E9%94%81_xf0rwf.jpg
 category: life
 tags:
   - life
