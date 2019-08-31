@@ -1,11 +1,11 @@
 ---
 date: 2019-07-23 18:26:40
 layout: post
-title: Birds can fly, but this you knew already
-subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559825145/theme16_o0seet.jpg
-optimized_image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559825145/theme16_o0seet.jpg
+title: 建站的一点分享
+subtitle: 
+description: 昨晚自己捣腾了一下网站，结果把原来的网站源码给误删了，经过一天的时间，又恢复了，换了主题。可惜我的第一篇文章已经找不到了
+image: https://res.cloudinary.com/ddsg/image/upload/c_scale,h_399,w_760/v1567212789/computer_vv5lii.jpg
+optimized_image: https://res.cloudinary.com/ddsg/image/upload/c_scale,h_200,w_380/v1567212789/computer_vv5lii.jpg
 category: work
 tags:
   - work
