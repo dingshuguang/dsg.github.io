@@ -1,19 +1,27 @@
 # Site Settings
-name: DSG
-title: DSG
-description: Think and Write
+name: Jekflix
+title: Jekflix | A blog theme for Jekyll
+description: Jekflix is a template for Jekyll inspired by Netflix and made by Thiago Rossener.
 tags:
   - blog
-  - life
-  - work
+  - template
+  - jekyll
+  - theme
   - netlify
-email: dingshuguang1@gmail.com
-disqus_username:
+email: youremail@xyz.com
+disqus_username: disqus_username
 show_hero: true
 
 
 # Social Media Settings
- Remove the item if you don't need it
+# Remove the item if you don't need it
+github_username: github_username
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: linkedin_username
+medium_username: medium_username
+
 
 # Theme Settings
 themeColor: "#ff0a16"
@@ -26,8 +34,8 @@ texts: "#333333"
 # Posts Settings
 show_time_bar: true
 show_modal_on_exit: false
-show_modal_on_finish_post: false
-two_columns_layout: false
+show_modal_on_finish_post: true
+two_columns_layout: true
 
 
 # Advanced Settings
@@ -42,7 +50,7 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:title/
 collections:
-  authors: 丁曙光
+  authors:
     output: true
 paginate_path: "/page/:num/"
 
@@ -65,9 +73,9 @@ paginate_content:
       is_generated: true
 
 # Plugins
-#plugins:
-  #- jekyll-paginate
-  #- jekyll-paginate-content
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
 
 # Exclude my node related stuff
 exclude: [

@@ -1,10 +1,12 @@
-name: DSG
-title: DSG
-description: Think and Writ
+name: Jekflix
+title: Jekflix | A blog theme for Jekyll
+description: Jekflix is a template for Jekyll inspired by Netflix and made by Thiago Rossener.
 tags:
   - blog
-  - life
-  - work
-email: 
-disqus_username:
+  - template
+  - jekyll
+  - theme
+  - netlify
+email: youremail@xyz.com
+disqus_username: disqus_username
 show_hero: true

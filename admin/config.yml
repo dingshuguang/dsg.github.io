@@ -1,6 +1,6 @@
 backend:
-  name: DSG
-  branch:
+  name: git-gateway
+  branch: v2
 publish_mode: editorial_workflow
 media_folder: "assets/img/uploads"
 collections:
@@ -233,7 +233,30 @@ collections:
         name: "social"
         file: "src/yml/social.yml"
         fields:
-          
+          - label: "GitHub Username"
+            name: "github_username"
+            widget: "string"
+            required: false
+          - label: "Facebook Username"
+            name: "facebook_username"
+            widget: "string"
+            required: false
+          - label: "Twitter Username"
+            name: "twitter_username"
+            widget: "string"
+            required: false
+          - label: "Instagram Username"
+            name: "instagram_username"
+            widget: "string"
+            required: false
+          - label: "LinkedIn Username"
+            name: "linkedin_username"
+            widget: "string"
+            required: false
+          - label: "Medium Username"
+            name: "medium_username"
+            widget: "string"
+            required: false
       - label: "Theme"
         name: "theme"
         file: "src/yml/theme.yml"
@@ -298,3 +321,5 @@ collections:
             name: "language"
             widget: "string"
             hint: "Content language, ex: pt-BR, en, fr"
+
+
