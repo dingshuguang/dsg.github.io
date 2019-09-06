@@ -6,7 +6,7 @@ subtitle:
 description: 青岛，其实我很早就想去看看。这次休年假，我真的去了，哪来的动力？平时去哪我都懒得动换，这次我真的是散心去了。
 image: https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567744110/IMG_1606_u90wpy.jpg
 optimized_image: https://res.cloudinary.com/ddsg/image/upload/c_fill,h_200,w_380/v1567744110/IMG_1606_u90wpy.jpg
-category: travel
+category: life
 tags:
   - travel
   - life
