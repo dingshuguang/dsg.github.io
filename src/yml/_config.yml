@@ -1,18 +1,18 @@
- Site Settings
-=include site.yml
+# Site Settings
+#=include site.yml
 
- Social Media Settings
- Remove the item if you don't need it
-=include social.yml
+ #Social Media Settings
+ #Remove the item if you don't need it
+#=include social.yml
 
- Theme Settings
-=include theme.yml
+ #Theme Settings
+#=include theme.yml
 
- Posts Settings
-=include posts.yml
+# Posts Settings
+#=include posts.yml
 
- Advanced Settings
-=include advanced.yml
+ #Advanced Settings
+#=include advanced.yml
 
  Build settings
 markdown: kramdown
@@ -42,12 +42,12 @@ paginate_content:
       is_generated: true
 
 # Plugins
-plugins:
+#plugins:
   #- jekyll-paginate
   #- jekyll-paginate-content
 
 # Exclude my node related stuff
-exclude: [
+#exclude: [
   'package.json',
   'package-lock.json',
   'src',
