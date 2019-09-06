@@ -72,9 +72,9 @@ paginate_content:
       is_generated: true
 
 # Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-paginate-content
+#plugins:
+  #- jekyll-paginate
+  #- jekyll-paginate-content
 
 # Exclude my node related stuff
 exclude: [
