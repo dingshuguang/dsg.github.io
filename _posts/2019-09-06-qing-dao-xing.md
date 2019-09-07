@@ -18,17 +18,16 @@ author: 丁曙光
 大海赋予了很多，文学青年都很会说，豆瓣上我看到了很多，哈哈。真是，看到海心情会好，另外我觉得当地人的皮肤都很好，养人。  
 ![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567745990/IMG_1473_vaa8q5.jpg) 海边浪花，抓拍。这是在八大关海边的礁石上，我在这待了一个多小时。  
 ![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567746890/IMG_1453_leor7a.jpg)  
-![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_766/v1567746981/IMG_1434_zqxkqz.jpg)  
-栈桥，人还是很多呀~  
+![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_766/v1567746981/IMG_1434_zqxkqz.jpg)  栈桥，人还是很多呀~    
+
 ![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567763743/IMG_1383_gjwxz3.jpg)  
-![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567765433/IMG_1377_bftszv.jpg)  
-这是在我住的地方不远的一个小码头，一位父亲带着一个儿子再玩跳水，哈哈，又是抓拍。还遇到了两位游泳爱好者，可是海泳啊，看着我也想下去尝试尝试，忘带泳衣了，算了吧还是。他们说话就有山东口音，有五十多岁了，活的真有滋味，胡须很长，在胸前飘飘的。  
-![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567766031/IMG_1415_hrxkai.jpg)  
-这是在我住的地方，从房间的窗户里向外拍的，夜景。用的M挡。  
-![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567766471/IMG_1551_cmo3qh.jpg)  
-这艘笨笨的大货轮，从哪里来啊？是不是从美国？ 速度挺快的，我拍了几张照片，它已经从我的镜头的视角里跑出去了。  
+![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567765433/IMG_1377_bftszv.jpg)  这是在我住的地方不远的一个小码头，一位父亲带着一个儿子再玩跳水，哈哈，又是抓拍。还遇到了两位游泳爱好者，可是海泳啊，看着我也想下去尝试尝试，忘带泳衣了，算了吧还是。他们说话就有山东口音，有五十多岁了，活的真有滋味，胡须很长，在胸前飘飘的。  
+
+![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567766031/IMG_1415_hrxkai.jpg)  这是在我住的地方，从房间的窗户里向外拍的，夜景。  
+
+![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567766471/IMG_1551_cmo3qh.jpg)  这艘笨笨的大货轮，从哪里来啊？是不是从美国？ 速度挺快的，我拍了几张照片，它已经从我的镜头的视角里跑出去了。  
   
-好，最后在上一张  
+最后在上一张  
 ![enter description here](https://res.cloudinary.com/ddsg/image/upload/c_fill,h_399,w_760/v1567766931/IMG_1561_bqcx60.jpg)  
 OK，就这样。我的青岛旅行其实很简单，我觉得，没有什么计划，也没有什么攻略，直到到了我要住的酒店，我才翻翻手机看看景点，和网友在群里交流交流，也就这样，他们想去的，我并不想去，所以有些我也略过了，比如爬山，我不太想去，我家出门就是山，虽然不同，但是我的兴趣不大，还是在海边待的时间长。  
 青岛的年轻人，一样喜欢刷刷朋友圈，看抖音（至今我觉得这个程序很无聊，我一听这两个字，浑身就不舒服），玩苹果手机。去了趟农贸市场，坐了一趟地铁。我住西海岸，是不是我住的地方人少呢？地铁里真的没有什么人，早上8点多的时候。这要是在北京绝对是爆挤。想象一下你在北京的大年三十晚上坐地铁，和现在的青岛地铁是一样的。宜居的城市啊。
