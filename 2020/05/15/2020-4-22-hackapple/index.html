@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        Hexo
+    </title>
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            我是如何安装黑苹果的
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p>这幅图是我前两天的截图，这几天其实有时间就在捣鼓电脑，“黑苹果”，就是取名hack（黑客）+苹果，被黑客破解后安装在Windows系统的机器上，macos只是能在苹果的设备上安装，Windows的设备上安装就属于黑苹果了。安装过程比较复杂，需要一点点电脑的知识，还有一点耐心和时间。目前黑苹果支持的Intel的cpu比较多，AMD的比较少，据说成功率不高，然后i3 i5 i7 都可以，显卡最好是有核显，因为最新的苹果系统10.15不支持独显，当然不支持的是N卡，A卡是支持的。其实如果要上独显可以安装老版本的10.13或以前的都支持N卡的独显。我不得不说一声“安装有风险，后果我不负责”。</p>
+<p>系统镜像文件是在一位黑苹果的网友博客“黑果小兵”上下载的，网址是<a href="blog.daliansky.net">blog.daliansky.net</a>,他已经做好了文件了，直接下载制作安装U盘就可以了，用balenaEtche这个软件直接选择制作就ok了。他的博客上有很多教程的文章，可以参考一下。苹果的系统在win上是不能被识别的，制作好后Windows会有提示格式化，不用管。</p>
+<p>制作好U盘，下一步就是给黑苹果分个区，如果电脑有一块磁盘，而你的电脑是efi启动的模式，可以不用管。如果是两块磁盘，要在安装的那块磁盘上分出一个esp分区，然后留好安装苹果系统的分区，大概50-100G为好。最好先格式化一下，比如我的笔记本就是一块磁盘，一个分区装Windows在C盘，一个分区装macos在D盘。</p>
+<p>这之前还要在BIOS上设置一下参数。比如我的是联想电脑，开机按F1进入BIOS，关闭安全启动，boot顺序改为USB，因为安装的时候自己会重启好几次，所以选择USB就不用手动选择了。</p>
+<p>然后重点来了，macos引导要靠第三方引导，用的最多的是clover，在clover下最重要的就是配置文件config.plist 几乎所有的苹果系统文件配置都是在这个文件上，后期优化也会触及到这个文件。<br>设置好后，开机启动进入U盘，选择苹果图标，空格 看看（-v）是否选中，再把光标定位到第一项，回车打开啰嗦跑码模式（默认是这个模式，便于排错），如果正常的话就会进入磁盘工具界面，抹掉要安装系统的磁盘，重点！千万看好磁盘再抹掉！！否则无法恢复！格式为apfs，关闭，选择安装系统，选择磁盘安装，一路自动安装即可，之间要重启几次，不用管。如果进展顺利就会进入系统选择语言画面，一路默认，就会进入桌面了。到此算是安装黑苹果完成了50%吧。</p>
+<p>下面要把USB的引导文件拷贝到系统EFI分区内，因为不能总插着U盘吧，现在进入系统是靠U盘引导的。打开DiskGenius，选择U盘EFI下的clover复制到C盘esp/efi/下。再打开BOOTICE，选择主磁盘，选EFI，添加引导，名称填clover（自己随意），下面路径填/EFI/CLOVER/CLOVERX64.EFI 保存。重启。</p>
+<p>进入苹果系统，点击苹果图标看看系统报告，显卡，声卡，键盘鼠标，WiFi蓝牙，是否驱动。我的电脑安装完后没有声音，显卡显存小，电池没有显示，WiFi没有，这都是没有驱动上，找驱动是一个比较周折的事，我提到的那个博客“黑果小兵”的文章有很多打补丁的介绍，主要是显卡驱动上了会流畅很多。我是这么做的可以参考一下，显卡没有驱动上，装完后只有4M的显存。在苹果的系统下用clover configur软件打开config.plist，之前要选择mount EFI，挂载EFI分区，输入密码，路径是ESP/EFI/CLOVER/config.plist，再选择Graphics选项，打上显卡id 0x59160000，id可以在网上搜索到，输入你的显卡型号。再选择Devices 声卡输入id 3 ，重启。ok 现在声卡 显卡都好了，下一步看看调节屏幕亮度和电池显示功能，屏幕亮度在clover config软件里，acpl里勾选上pnlf，然后重启。电池显示需要修改DSDT文件，这里有详细说明—<a href="https://www.geekcj.com/article/5e295b028030980650240cbd" target="_blank" rel="noopener">https://www.geekcj.com/article/5e295b028030980650240cbd</a> 大概就差不多了，关闭跑码模式，删除-v即可。</p>
+<p>目前蓝牙不可用，WiFi不可用。因为目前我的网卡无解，型号是高通QCA9377，如果是Intel的卡可能会驱动上。</p>
+
+    </div>
+
+    
+</div>
+    <div class="footer" id="footer">
+    <p>Copyright © 2020 <a class="flink" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>-<a class="flink" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.
+        
+<!--         <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+        </script> -->
+    </p>
+</div>
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="CmCti21ooOOIzFOhEyFkFvR0-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="FqiyUqbg7McKN2eG0MCewupf">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+    color: #698fca;
+}
+
+.v .vlist .vcard .vhead .vsys {
+    color: #3a3e4a;
+}
+
+.v .vlist .vcard .vh .vmeta .vat {
+    color: #638fd5;
+}
+
+.v .vlist .vcard .vhead .vnick {
+    color: #6ba1ff;
+}
+
+.v a {
+    color: #8696b1;
+}
+
+.v .vlist .vcard .vhead .vnick:hover {
+    color: #669bfc;
+}
+</style>
+
+</body>
+
+</html>
