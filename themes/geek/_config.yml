@@ -20,3 +20,6 @@ valine:
 
 highlight:
   enable: false
+
+love: false
+click_show_text: true
