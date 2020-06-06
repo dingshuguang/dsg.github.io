@@ -99,7 +99,7 @@ theme: geek
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/dingshuguang/dingshuguang.github.io.git
+  repository: git@github.com:dingshuguang/dingshuguang.github.io.git
   branch: master
 
 live2d:
