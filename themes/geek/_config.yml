@@ -30,3 +30,13 @@ symbols_count_time:
   item_text_total: false
   awl: 4
   wpm: 200
+
+# 雪花特效3
+snow3: false
+
+# https://github.com/hustcc/ribbon.js
+# 彩带1.点击自动替换彩带
+ribbon: false
+
+# 彩带2.自动飘动
+ribbon_flow: false
