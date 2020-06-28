@@ -2,8 +2,8 @@
 layout: post
 title: 闲谈
 date: 2020-05-23
-tags: 上班 VPN 蠢
-top_img: /img/markus.png
+tags: VPN
+top_img: /img/markus.jpg
 ---
 
 上了一个礼拜的班，今天回家了。这是疫情从过年前开始到现在，第一次上班，有些不太适应，也许在家待习惯了。明天一早就得回单位。
