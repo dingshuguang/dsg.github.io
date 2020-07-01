@@ -12,8 +12,9 @@ menu:
   # 标签: /tags/ || fas fa-tags
   # Categories: /categories/ || fas fa-folder-open
   清单||fas fa-list:
-    - 相册 || /photo/
-    # - 电影 || /movies/ || fas fa-video
+    - 相册 || /photo/ || fas fa-photo-video
+    - 音乐 || /music/ || fas fa-music
+    - 电影 || /movies/ || fas fa-video
   链接: /link/ || fas fa-link
   # 关于: /about/ || fas fa-heart
 
@@ -38,7 +39,8 @@ copy:
 social:
   fab fa-github: https://github.com/dingshuguang || Github
   fas fa-envelope: mailto:dingshuguang1@gmail.com || Email
-
+  fab fa-qq:  htttps://www.qq.com  ||  723626970
+  fab fa-weixin:  https://i.loli.net/2020/07/01/VlifOYyoEzL9X1a.jpg ||  dingshuguangweixin
 # search (搜索)
 # --------------------------------------
 
