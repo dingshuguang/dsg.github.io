@@ -1,10 +1,10 @@
 - class_name: 网站
   class_desc: 值得推荐的网站
   link_list:
-    - name: Youtube
-      link: https://www.youtube.com/
-      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 视频类网站
+    - name: Convertio
+      link: https://convertio.co/zh/
+      avatar: https://i.loli.net/2020/07/04/qSIiPZrsYLeR4Tx.png
+      descr: 文件在线转换
     - name: 域名网站
       link: https://www.freenom.com/
       avatar: https://i.loli.net/2020/07/01/QkcdOW1RSoEvypH.png
@@ -17,10 +17,10 @@
       link: https://cloudinary.com/
       avatar: https://i.loli.net/2020/07/01/9XLhsCFM1BrudKk.png
       descr: 国外图床类网站
-    - name: Twitter
-      link: https://twitter.com/
-      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-      descr: 社交分享平台
+    - name: Office-converter
+      link: https://cn.office-converter.com/
+      avatar: https://i.loli.net/2020/07/04/gTpjhv4SrYoVRGZ.jpg
+      descr: 文档 音视频在线转换
     - name: 图片
       link: https://unsplash.com/
       avatar: https://i.loli.net/2020/07/01/lxZjkYP9CedmALR.png
@@ -41,3 +41,37 @@
       link: https://saerasoft.com/caesium/
       avatar: https://i.loli.net/2020/07/02/JGKpFywSz9cZHfM.png
       descr: 图片压缩软件
+    - name: Photomosh
+      link: https://photomosh.com/
+      avatar: https://i.loli.net/2020/07/04/kf6pzIRFAqWmKsx.png
+      descr: 故障艺术在线生成
+    - name: uugai
+      link: http://www.uugai.com/
+      avatar: https://i.loli.net/2020/07/04/sYNJxC8kU41TqGz.png
+      descr: 在线logo设计
+    - name: cli
+      link: https://cli.im/
+      avatar: https://i.loli.net/2020/07/04/PzQAeBTfgX4cWKU.png
+      descr: 在线二维码生成
+    - name: shipinyu
+      link: http://www.shipinyu.com/
+      avatar: https://i.loli.net/2020/07/04/4hkaqCbUyYxm9FI.png
+      descr: 视频网站类视频下载
+    - name: mixkit
+      link: https://mixkit.co/
+      avatar: https://i.loli.net/2020/07/04/jw8p4M1guUEWkYO.png
+      descr: 视频资源
+    - name: piqsels
+      link: https://www.piqsels.com/
+      avatar: https://i.loli.net/2020/07/04/PeIOSQ1f9UFHLXR.png
+      descr: 免版权图片
+    - name: 1ppt
+      link: http://www.1ppt.com/
+      avatar: https://i.loli.net/2020/07/04/iuW4xk1PJa63zNv.png
+      descr: ppt模板
+    - name: wordart
+      link: https://wordart.com/
+      avatar: https://i.loli.net/2020/07/04/xYZIEBoP5hTNdOz.png
+      descr: 文字云在线制作
+
+      

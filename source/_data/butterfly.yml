@@ -12,7 +12,7 @@ menu:
   # 标签: /tags/ || fas fa-tags
   # Categories: /categories/ || fas fa-folder-open
   清单||fas fa-list:
-    - 相册 || /photo/ || fas fa-photo-video
+    # - 相册 || /photo/ || fas fa-photo-video
     - 音乐 || /music/ || fas fa-music
     - 电影 || /movies/ || fas fa-video
   链接: /link/ || fas fa-link
