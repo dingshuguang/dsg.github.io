@@ -39,7 +39,7 @@ copy:
 social:
   fab fa-github: https://github.com/dingshuguang || Github
   fas fa-envelope: mailto:dingshuguang1@gmail.com || Email
-  fab fa-qq:  htttps://www.qq.com  ||  723626970
+  # fab fa-qq:  htttps://www.qq.com  ||  723626970
   fab fa-weixin:  https://i.loli.net/2020/07/01/VlifOYyoEzL9X1a.jpg ||  dingshuguangweixin
 # search (搜索)
 # --------------------------------------
@@ -564,6 +564,7 @@ subtitle:
   sub:
     - 过关了吗？
     - 今天过的怎么样？
+    - 你从哪里来？ 要到哪里去。
 
 # Loading Animation (加載動畫)
 preloader: true
