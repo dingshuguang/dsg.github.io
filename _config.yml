@@ -125,3 +125,12 @@ search:
   path: search.xml
   field: post
   content: true
+
+# hexo-tag-cloud
+tag_cloud:
+    textFont: sans-serif, "Lucida Grande"
+    textColor:  "#00BFFF"
+    textHeight: 25
+    outlineColor:  
+    maxSpeed: 0.1
+    pauseOnSelected: false # true 意味着当选中对应 tag 时,停止转动
