@@ -134,3 +134,21 @@ tag_cloud:
     outlineColor:  
     maxSpeed: 0.1
     pauseOnSelected: false # true 意味着当选中对应 tag 时,停止转动
+
+douban:
+  user: 192362342
+  builtin: true
+  book:
+    title: '几年前读过的一些书'
+    quote: '虽然现在不读了，还是罗列出来。'
+  movie:
+    title: '有意思的电影'
+    quote: '看过很多有意义的电影，只罗列出资料里和记忆力里有的。'
+  #game:
+    #title: 'This is my game title'
+    #quote: 'This is my game quote'
+  timeout: 10000 
+
+aplayer:  
+  asset_inject: false
+  meting: true
