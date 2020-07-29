@@ -93,17 +93,17 @@ avatar:
   effect: false
 
 # the banner image of home page
-index_img: https://i.loli.net/2020/07/10/TSanM4g32vdul5D.jpg
+index_img: https://res.cloudinary.com/ddsg/image/upload/v1596013014/cf_q4cxej.jpg
 
 # if the banner of page not setting,it will show the top_img
-default_top_img: https://i.loli.net/2020/07/02/YdzVSiTK5AFCX78.jpg
+default_top_img: https://res.cloudinary.com/ddsg/image/upload/v1596013030/markus_l702iu.jpg
 
 # the banner image of archive page
-archive_img: https://i.loli.net/2020/07/02/D4jNhZHAMeaB1Kp.jpg
+archive_img: https://res.cloudinary.com/ddsg/image/upload/v1596013030/markus_l702iu.jpg
 
 # the banner image of tag page
 # tag page, look like https://xxxxxxxxx.com/tags/butterfly
-tag_img: https://i.loli.net/2020/07/02/YdzVSiTK5AFCX78.jpg
+tag_img: https://res.cloudinary.com/ddsg/image/upload/v1596013030/markus_l702iu.jpg
 
 # the banner image of category page
 # category page, look like https://xxxxxxxxx.com/categories/butterfly
@@ -137,7 +137,7 @@ error_img:
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+  background: https://res.cloudinary.com/ddsg/image/upload/v1596013030/markus_l702iu.jpg
 
 post_meta:
   page: # Home Page
