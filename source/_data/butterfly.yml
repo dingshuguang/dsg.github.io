@@ -41,7 +41,7 @@ social:
   fab fa-github: https://github.com/dingshuguang || Github
   fas fa-envelope: mailto:dingshuguang1@gmail.com || Email
   # fab fa-qq:  htttps://www.qq.com  ||  723626970
-  fab fa-weixin:  https://i.loli.net/2020/07/01/VlifOYyoEzL9X1a.jpg ||  dingshuguangweixin
+  # fab fa-weixin:  https://i.loli.net/2020/07/01/VlifOYyoEzL9X1a.jpg ||  dingshuguangweixin
 # search (搜索)
 # --------------------------------------
 
@@ -420,20 +420,20 @@ qihu_site_verification:
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
 
-# theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
-#   button_hover: "#FF7242"
-#   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
+theme_color:
+   enable: true
+   main: "#5b518a"
+   paginator: "#00c4b6"
+   button_hover: "#FF7242"
+   text_selection: "#00c4b6"
+   link_color: "#99a9bf"
+   meta_color: "#858585"
+   hr_color: "#A4D8FA"
+   code_foreground: "#F47466"
+   code_background: "rgba(27, 31, 35, .05)"
+   toc_color: "#00c4b6"
+   blockquote_padding_color: "#5b518a"
+   blockquote_background_color: "#5b518a"
 
 # The top_img settings of home page
 # default: top img - full screen, site info - middle (默認top_img全屏，site_info在中間)
