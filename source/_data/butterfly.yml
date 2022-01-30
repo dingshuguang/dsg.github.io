@@ -581,7 +581,7 @@ aside:
     description:
   card_announcement:
     enable: true
-    content: 時間來到了2021年，因爲疫情的原因我從一月份開始休假了。
+    content: 很长时间没有更新了呀
   card_recent_post:
     enable: false
     limit: 5 # if set 0 will show all
