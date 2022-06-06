@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>华为交换机基本操作命令 | Danny's blog</title><meta name="description" content="华为的基本命令。   基本操作 批量建vlan，并把接口划vlan1234567891011syssysname xxxx(也可无）vlan batch 10 20int gi1&#x2F;0&#x2F;1 批量划分: 创建端口组port-group 10 组名比如加入vlan 10 就创建端口组10group-member g 0&#x2F;0&#x2F;1 to g 0&#x2F;0&amp;#x2F"><meta name="keywords" content="switch"><meta name="author" content="Danny"><meta name="copyright" content="Danny"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dingshuguang.github.io/2021/01/14/2021-1-14-huawei/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="华为交换机基本操作命令"><meta property="og:url" content="https://dingshuguang.github.io/2021/01/14/2021-1-14-huawei/"><meta property="og:site_name" content="Danny's blog"><meta property="og:description" content="华为的基本命令。   基本操作 批量建vlan，并把接口划vlan1234567891011syssysname xxxx(也可无）vlan batch 10 20int gi1&#x2F;0&#x2F;1 批量划分: 创建端口组port-group 10 组名比如加入vlan 10 就创建端口组10group-member g 0&#x2F;0&#x2F;1 to g 0&#x2F;0&amp;#x2F"><meta property="og:image" content="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_1920/v1593394961/taylor-vick-M5tzZtFCOfs-unsplash_rpv2ax.jpg"><meta property="article:published_time" content="2021-01-14T02:11:00.000Z"><meta property="article:modified_time" content="2022-06-06T06:52:58.861Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="CAD2013笔记" href="https://dingshuguang.github.io/2021/02/02/2021-2-2-cad/"><link rel="next" title="锐捷交换机的基本命令" href="https://dingshuguang.github.io/2021/01/13/2021-1-13-ruijie/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"真誠,善良,忍耐,順其自然,堅韌","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过console口配置及telnet"><span class="toc-number">2.</span> <span class="toc-text">通过console口配置及telnet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置telnet-及本地用户认证"><span class="toc-number">3.</span> <span class="toc-text">配置telnet 及本地用户认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://res.cloudinary.com/ddsg/image/upload/c_scale,w_1920/v1593394961/taylor-vick-M5tzZtFCOfs-unsplash_rpv2ax.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Danny's blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">华为交换机基本操作命令</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2021-01-14 10:11:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2021-01-14</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-06-06 14:52:58"><i class="fas fa-history fa-fw"></i> 更新于 2022-06-06</span></time></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">2k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 9 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>华为的基本命令。  </p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ol>
+<li>批量建vlan，并把接口划vlan<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">sysname xxxx(也可无）</span><br><span class="line">vlan batch 10 20</span><br><span class="line">int gi1&#x2F;0&#x2F;1 </span><br><span class="line">批量划分: </span><br><span class="line">创建端口组</span><br><span class="line">port-group 10 组名比如加入vlan 10 就创建端口组10</span><br><span class="line">group-member g 0&#x2F;0&#x2F;1 to g 0&#x2F;0&#x2F;10</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br><span class="line">q</span><br></pre></td></tr></table></figure></li>
+<li>划分trunk口，必须指定通过的vlan，否则不会放行。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">int gi1&#x2F;0&#x2F;3</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow-pass vlan 10 20</span><br></pre></td></tr></table></figure></li>
+<li>配置管理IP<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vlan 6</span><br><span class="line">int vlanif 6 配置逻辑接口为管理接口</span><br><span class="line">ip address 10.0.1.56 24 华为可以直接写24 思科锐捷要写三个255</span><br><span class="line">q</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="通过console口配置及telnet"><a href="#通过console口配置及telnet" class="headerlink" title="通过console口配置及telnet"></a>通过console口配置及telnet</h3><blockquote>
+<p>以下涉及的命令行及回显信息以V200R006C00版本的S7700交换机为例。</p>
+</blockquote>
+<p>参考链接–&gt;&gt;<a href="https://support.huawei.com/hedex/hdx.do?lib=EDOC1100126532AZI02127&docid=EDOC1100126532&lang=zh&v=04&tocLib=EDOC1100126532AZI02127&tocV=04&id=ZH-CN_TASK_0176366017&tocURL=resources%2525252Fdc%2525252Fdc_cfg_aaa_0001.html&p=t&fe=1&ui=3&keyword=aaa" target="_blank" rel="noopener">官网说明</a></p>
+<p>设置日期、时间、时区及名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;HUAWEI&gt; clock timezone BJ add 08:00:00    &#x2F;&#x2F;其中BJ为设置的时区名称。08:00:00表示当地时间是在系统默认的UTC时区基础上加8。</span><br><span class="line">&lt;HUAWEI&gt; clock datetime 10:10:00 2014-07-26    &#x2F;&#x2F;设置当前时间和日期。设置当前时间前，请务必确认所在时区，设置正确的时区偏移时间，以保证本地时间正确。</span><br><span class="line">&lt;HUAWEI&gt; system-view</span><br><span class="line">[HUAWEI] sysname Switch    &#x2F;&#x2F;配置交换机名称为Switch。</span><br></pre></td></tr></table></figure>
+
+<p>配置Console用户界面的认证方式（V200R010至V200R019版本Console用户界面的认证方式缺省为AAA认证。V200R020及之后版本Console用户界面的认证方式缺省为Password认证  </p>
+<p>配置Console用户界面的认证方式为AAA认证，并创建本地用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Switch] user-interface console 0</span><br><span class="line">[Switch-ui-console0] authentication-mode aaa    &#x2F;&#x2F;设置Console用户认证方式为AAA认证。</span><br><span class="line">[Switch-ui-console0] quit</span><br><span class="line">[Switch] aaa</span><br><span class="line">[Switch-aaa] local-user admin1234 password irreversible-cipher Helloworld@6789    &#x2F;&#x2F;创建名为admin1234的本地用户，设置其登录密码为Helloworld@6789。V200R003之前的版本，不支持irreversible-cipher，仅支持cipher关键字。</span><br><span class="line">[Switch-aaa] local-user admin1234 privilege level 15    &#x2F;&#x2F;配置用户级别为15级。</span><br><span class="line">[Switch-aaa] local-user admin1234 service-type terminal    &#x2F;&#x2F;配置接入类型为terminal，即：Console用户。</span><br><span class="line">[Switch-aaa] quit</span><br></pre></td></tr></table></figure>
+<p>配置管理IP地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Switch] vlan 10</span><br><span class="line">[Switch-vlan10]  interface vlanif 10    &#x2F;&#x2F;配置VLANIF10作为管理接口。</span><br><span class="line">[Switch-Vlanif10] ip address 10.1.1.1 24</span><br><span class="line">[Switch-Vlanif10] quit</span><br><span class="line">[Switch] interface gigabitethernet 0&#x2F;0&#x2F;10    &#x2F;&#x2F;GE0&#x2F;0&#x2F;10为使用Web网管登录Switch的PC与Switch相连的物理接口编号，请按照实际现网情况进行选择。</span><br><span class="line">[Switch-GigabitEthernet0&#x2F;0&#x2F;10] port link-type access    &#x2F;&#x2F;配置接口类型为access。</span><br><span class="line">[Switch-GigabitEthernet0&#x2F;0&#x2F;10] port default vlan 10    &#x2F;&#x2F;配置接口GE0&#x2F;0&#x2F;10加入VLAN 10。</span><br><span class="line">[Switch-GigabitEthernet0&#x2F;0&#x2F;10] quit</span><br></pre></td></tr></table></figure>
+<p>配置Telnet功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Switch] telnet server enable    &#x2F;&#x2F;使能Telnet功能。V200R020及之后版本您还需要执行telnet server-source命令配置服务器端的源接口为VLANIF10，客户端才能通过IP地址10.1.1.1连接服务器。</span><br><span class="line">[Switch] user-interface vty 0 4    &#x2F;&#x2F;进入VTY 0～VTY 4用户界面视图。</span><br><span class="line">[Switch-ui-vty0-4] protocol inbound telnet    &#x2F;&#x2F;指定VTY用户界面所支持的协议为Telnet。</span><br><span class="line">[Switch-ui-vty0-4] user privilege level 15    &#x2F;&#x2F;配置VTY 0～VTY 4的用户级别为15级。</span><br><span class="line">[Switch-ui-vty0-4] authentication-mode aaa    &#x2F;&#x2F;配置VTY 0～VTY 4的用户认证方式为AAA认证。</span><br><span class="line">[Switch-ui-vty0-4] quit</span><br><span class="line">[Switch] aaa</span><br><span class="line">[Switch-aaa] local-user admin123 password irreversible-cipher Huawei@6789    &#x2F;&#x2F;创建名为admin123的本地用户，设置其登录密码为Huawei@6789。V200R003之前的版本，不支持irreversible-cipher，仅支持cipher关键字。</span><br><span class="line">[Switch-aaa] local-user admin123 privilege level 15    &#x2F;&#x2F;配置用户级别为15级。</span><br><span class="line">Warning: This operation may affect online users, are you sure to change the user privilege level ?[Y&#x2F;N]y   </span><br><span class="line">[Switch-aaa] local-user admin123 service-type telnet    &#x2F;&#x2F;配置接入类型为telnet，即：Telnet用户。</span><br><span class="line">[Switch-aaa] quit</span><br></pre></td></tr></table></figure>
+
+<p>配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line">sysname Switch</span><br><span class="line">#</span><br><span class="line">vlan batch 10</span><br><span class="line">#</span><br><span class="line">telnet server enable</span><br><span class="line">#</span><br><span class="line">clock timezone BJ add 08:00:00</span><br><span class="line">#</span><br><span class="line">aaa</span><br><span class="line">local-user admin123 password irreversible-cipher %^%#&#125;+ysUO*B&amp;+p&#39;NRQR0&#123;ZW7[GA*Z*!X@o:Va15dxQAj+,$&gt;NP&gt;63de|G~ws,9G%^%#</span><br><span class="line">local-user admin123 privilege level 15</span><br><span class="line">local-user admin123 service-type telnet</span><br><span class="line">local-user admin1234 password irreversible-cipher %^%#&#125;+ysUO*B&amp;+p&#39;NRQR0&#123;ZW7[GA*Z*!X@o:Va15dxQAj+,$&gt;NP&gt;63de|G~ws,9G%^%#</span><br><span class="line">local-user admin1234 privilege level 15</span><br><span class="line">local-user admin1234 service-type terminal</span><br><span class="line">#</span><br><span class="line">interface Vlanif10</span><br><span class="line">ip address 10.1.1.1 255.255.255.0</span><br><span class="line">#</span><br><span class="line">interface GigabitEthernet0&#x2F;0&#x2F;10</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br><span class="line">#</span><br><span class="line">user-interface con 0</span><br><span class="line">authentication-mode aaa</span><br><span class="line">user-interface vty 0 4</span><br><span class="line">authentication-mode aaa</span><br><span class="line">user privilege level 15 </span><br><span class="line">protocol inbound telnet</span><br><span class="line">#</span><br><span class="line">return</span><br></pre></td></tr></table></figure>
+<h3 id="配置telnet-及本地用户认证"><a href="#配置telnet-及本地用户认证" class="headerlink" title="配置telnet 及本地用户认证"></a>配置telnet 及本地用户认证</h3><p>配置思路<br>配置Switch的接口IP地址。<br>开通Telnet服务器功能。<br>配置VTY用户界面的验证方式为aaa。<br>配置AAA本地认证：创建用户名和密码、配置用户的接入类型、配置用户级别。</p>
+<p>配置Switch的接口IP地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;HUAWEI&gt; system-view</span><br><span class="line">[HUAWEI] sysname Switch</span><br><span class="line">[Switch] vlan batch 100</span><br><span class="line">[Switch] interface vlanif 100</span><br><span class="line">[Switch-Vlanif100] ip address 10.1.2.10 24</span><br><span class="line">[Switch-Vlanif100] quit</span><br><span class="line">[Switch] interface gigabitethernet 0&#x2F;0&#x2F;1</span><br><span class="line">[Switch-GigabitEthernet0&#x2F;0&#x2F;1] port link-type access</span><br><span class="line">[Switch-GigabitEthernet0&#x2F;0&#x2F;1] port default vlan 100</span><br><span class="line">[Switch-GigabitEthernet0&#x2F;0&#x2F;1] quit</span><br></pre></td></tr></table></figure>
+<p>开启telnet功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Switch] telnet server enable</span><br></pre></td></tr></table></figure>
+<p>配置AAA本地认证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Switch] aaa</span><br><span class="line">[Switch-aaa] local-user user1 password irreversible-cipher Huawei@123</span><br><span class="line">[Switch-aaa] local-user user1 service-type telnet</span><br><span class="line">[Switch-aaa] local-user user1 privilege level 15</span><br><span class="line">[Switch-aaa] quit</span><br></pre></td></tr></table></figure>
+<p>配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line">sysname Switch</span><br><span class="line">#</span><br><span class="line">vlan batch 100</span><br><span class="line">#</span><br><span class="line">telnet server enable</span><br><span class="line">#</span><br><span class="line">aaa                                                                             </span><br><span class="line">local-user user1 password irreversible-cipher $1a$+:!j;\;$Z!$&amp;%&#125;p%ctzj&quot;W&#96;GM;APoC&#x3D;XPLB&#x3D;L-vJG3-&#39;3Dhyci;$</span><br><span class="line">local-user user1 privilege level 15                                                       </span><br><span class="line">local-user user1 service-type telnet</span><br><span class="line">#</span><br><span class="line">interface Vlanif100</span><br><span class="line">ip address 10.1.2.10 255.255.255.0                                          </span><br><span class="line">#</span><br><span class="line">interface GigabitEthernet0&#x2F;0&#x2F;1</span><br><span class="line">port link-type hybrid</span><br><span class="line">port hybrid pvid vlan 100</span><br><span class="line">port hybrid untagged vlan 100   </span><br><span class="line"># </span><br><span class="line">user-interface maximum-vty 15                                                   </span><br><span class="line">user-interface vty 0 14                                                         </span><br><span class="line">authentication-mode aaa </span><br><span class="line">protocol inbound telnet                                                     </span><br><span class="line">#</span><br><span class="line">return</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>配置默认路由<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route-static 0.0.0.0 0.0.0.0 10.1.6.1</span><br></pre></td></tr></table></figure></li>
+<li>查询sn号<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display device manufacture-info</span><br></pre></td></tr></table></figure></li>
+<li>查端口流量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dis counters</span><br></pre></td></tr></table></figure></li>
+<li>查端口与IP相关信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dis ip int brief</span><br></pre></td></tr></table></figure></li>
+<li>单向端口隔离<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[xx-gi0&#x2F;0&#x2F;1]进入要与其他端口隔离的端口</span><br><span class="line">am isolate gigabitethernet 0&#x2F;0&#x2F;2 to 0&#x2F;0&#x2F;10</span><br><span class="line">quit</span><br><span class="line">undo am isolate (gi 0&#x2F;0&#x2F;2 to 0&#x2F;0&#x2F;10)不指定则代表与所有端口取消隔离 默认二层隔离，三层互通</span><br><span class="line">port-isolate mode l2或all （l2二层隔离，all二层三层都隔离）</span><br><span class="line">undo port-isolate mode 恢复默认模式</span><br></pre></td></tr></table></figure></li>
+<li>端口隔离组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[xx-gi0&#x2F;0&#x2F;11]进入要加入端口隔离组的端口</span><br><span class="line">port-isolate enable group 10（自动创建隔离组10)</span><br><span class="line">q</span><br><span class="line">undo port-isolate enable 关闭端口隔离功能</span><br><span class="line">查看端口隔离组成员配置</span><br><span class="line">dis port-isolate group 10或all</span><br></pre></td></tr></table></figure></li>
+<li>查询端口up or down<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dis int brief</span><br></pre></td></tr></table></figure></li>
+<li>配置DHCP<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">dhcp ena 开启服务</span><br><span class="line">vlan 20 创建vlan</span><br><span class="line">int vlan 20</span><br><span class="line">ip add 10.0.2.1 24</span><br><span class="line">dhcp select global 全局 &#x2F; int 接口</span><br><span class="line">q</span><br><span class="line">ip pool vlan20</span><br><span class="line">gateway-list 10.0.2.1</span><br><span class="line">network 10.0.2.0 mask 24</span><br><span class="line">dns-list 1.1.1.1 3.3.3.3</span><br><span class="line">excluded-ip-address 10.0.2.254 排除自动分配的ip</span><br><span class="line">q</span><br><span class="line">dhcp server ping packet 3 测试3次查看要分配的IP是否被占用</span><br><span class="line">dhcp server ping timeout 100 等待100ms</span><br><span class="line">int g0&#x2F;0&#x2F;1</span><br><span class="line">por link-ty acc</span><br><span class="line">por def vlan 20</span><br><span class="line">q</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><blockquote>
+<p>忘记console密码  </p>
+</blockquote>
+<p>通过STelnet/Telnet登录设备配置新的Console口登录密码</p>
+<p>通过BootROM/BootLoad清除Console口登录密码<br>对于S2720EI、S5700S-28X-LI-AC、S5700S-52X-LI-AC、S5710-X-LI、S5720EI、S5720HI、S5720I-SI、S5720LI、S5720S-LI、S5720S-SI、S5720SI、S5730HI、S5730S-EI、S5730SI、S6720EI、S6720HI、S6720LI、S6720S-EI、S6720S-LI、S6720S-SI和S6720SI，是通过BootLoad清除Console口登录密码；对于其他款型的设备，是通过BootROM清除Console口登录密码。</p>
+<p>设备的BootROM/BootLoad提供了清除Console口登录密码的功能，用户可以在设备启动后修改Console口登录密码，然后保存配置。请按照如下步骤进行配置。  </p>
+<p><code>(1)</code> 通过Console口连接设备，并重启设备。当界面出现以下打印信息时，及时按下快捷键“Ctrl+B”并输入BootROM/BootLoad密码，进入BootROM/BootLoad主菜单。bootrom密码默认<a href="mailto:admin@huawei.com">admin@huawei.com</a> Admin@huawei.com<br><code>(2)</code> 在BootROM/BootLoad主菜单下选择“Clear password for console user”，清除Console口登录密码。<br><code>(3)</code> 根据设备的提示，在BootROM/BootLoad主菜单下选择“Boot with default mode”，启动设备。<br><code>(4)</code> 完成系统启动后，通过Console口登录时不需要认证，登录后按照系统提示配置验证密码。（V200R009及之后版本，完成系统启动后，通过Console口登录时认证方式为None,系统启动后不会提示配置验证密码。）</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Danny</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dingshuguang.github.io/2021/01/14/2021-1-14-huawei/">https://dingshuguang.github.io/2021/01/14/2021-1-14-huawei/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dingshuguang.github.io" target="_blank">Danny's blog</a>！</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="https://res.cloudinary.com/ddsg/image/upload/v1654490052/flower/luobo1_a6kc7q.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/02/2021-2-2-cad/"><img class="prev-cover" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_1920/v1612254695/kumpan-electric-SYo5eazBrls-unsplash_sw0kao.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CAD2013笔记</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/13/2021-1-13-ruijie/"><img class="next-cover" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_1920/v1593394961/taylor-vick-M5tzZtFCOfs-unsplash_rpv2ax.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">锐捷交换机的基本命令</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'IbbfT8u0h3OfsOuz912KHBPH-gzGzoHsz',
+  appKey: 'zjgOj218GRnxCb4wt4Uy8wIs',
+  placeholder: '您有什么想说的吗？（填写邮箱可以收到回复提醒）',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By Danny</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+  pangu.autoSpacingPage()
+})</script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

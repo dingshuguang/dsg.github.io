@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>给网站加个绿锁 | Danny's blog</title><meta name="description" content="打开我的网站在网址的最左边出现一个小绿锁的标志，后边紧跟着是HTTPS，没错，这就是我说的绿锁。 其实这个问题我研究好几天了，如果是单纯的博客，其实没有必要加上绿锁的，这个绿锁的意思是安全连接，也就是这个链接是经过加密的，主要用于需要保密的一些内容，比如私人的账号密码什么的。博客嘛，没有多大用，不过这样看起来是舒心多了，哈哈😄!!! 我来说一下我都是怎么弄的。一个是自签名SSL，一个是别人签的，"><meta name="keywords" content="SSL"><meta name="author" content="Danny"><meta name="copyright" content="Danny"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dingshuguang.github.io/2019/08/02/2019-08-02-secure/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="给网站加个绿锁"><meta property="og:url" content="https://dingshuguang.github.io/2019/08/02/2019-08-02-secure/"><meta property="og:site_name" content="Danny's blog"><meta property="og:description" content="打开我的网站在网址的最左边出现一个小绿锁的标志，后边紧跟着是HTTPS，没错，这就是我说的绿锁。 其实这个问题我研究好几天了，如果是单纯的博客，其实没有必要加上绿锁的，这个绿锁的意思是安全连接，也就是这个链接是经过加密的，主要用于需要保密的一些内容，比如私人的账号密码什么的。博客嘛，没有多大用，不过这样看起来是舒心多了，哈哈😄!!! 我来说一下我都是怎么弄的。一个是自签名SSL，一个是别人签的，"><meta property="og:image" content="https://res.cloudinary.com/ddsg/image/upload/v1593396236/timg_oc6lth.jpg"><meta property="article:published_time" content="2019-08-01T16:00:00.000Z"><meta property="article:modified_time" content="2022-06-06T06:52:58.852Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="如何建立自己的静态网页" href="https://dingshuguang.github.io/2020/04/26/2020-4-26-web/"><link rel="next" title="建站分享" href="https://dingshuguang.github.io/2019/07/23/2019-07-23-website/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"真誠,善良,忍耐,順其自然,堅韌","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://res.cloudinary.com/ddsg/image/upload/v1593396236/timg_oc6lth.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Danny's blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">给网站加个绿锁</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2019-08-02 00:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2019-08-02</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-06-06 14:52:58"><i class="fas fa-history fa-fw"></i> 更新于 2022-06-06</span></time></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">811</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 2 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>打开我的网站在网址的最左边出现一个小绿锁的标志，后边紧跟着是HTTPS，没错，这就是我说的绿锁。</p>
+<p>其实这个问题我研究好几天了，如果是单纯的博客，其实没有必要加上绿锁的，这个绿锁的意思是安全连接，也就是这个链接是经过加密的，主要用于需要保密的一些内容，比如私人的账号密码什么的。博客嘛，没有多大用，不过这样看起来是舒心多了，哈哈😄!!!</p>
+<p>我来说一下我都是怎么弄的。一个是自签名SSL，一个是别人签的，先说自签名证书。</p>
+<p>服务器都有SSL这个模块，它可以提供一些SSL证书相关的信息。比如它可以给你提供私钥和SRC，这两个文件是生成证书所需的文件。证书是需要有些机构签名的，也有自签名的。然后你如果能得到这两个文件，就找那些提供免费SSL的网站，填上它提供给你的信息，生成证书文件，然后再回到服务器上，填上证书文件，激活证书。大概是这个流程，不过我没有用这个自签名。</p>
+<p>通过一个加密中间商，也就是一个网站。方法可以有很多，同样，不同的服务器要求也不同。国内有免费的SSL，加密级别不同，有个人、企业之分，个人选择一般DV级别的就可以了，如果是开个商业性质的网站，还是选择高级版的吧。</p>
+<p>在cloudflare这个网站做的签名，时期是一年，然后自动续签。哈哈😄!!!很省心吧！要想在这个网站上做签名，首先的知道你服务器上的IP，然后把域名服务器的服务器地址改为cloudflare这个服务器地址，具体地址它会提示你的，填好后，等会吧，你的域名激活后它会发邮件通知你，什么？什么叫激活？说白了就是你的域名转向已经从你原来的服务器转向它的服务器了，就已经激活了。然后你访问下你的网站，肯定访问不了，因为它的服务器根本就没有你部署的网站嘛！OK，既然没在它的网站，那我们再转向我们的网站，找到DNS选项，添加两个A到你的网站服务器地址，方法和你域名的方法一样。</p>
+<p>好，这下你真的可以好好休息一下了，因为你真的不能过一小会儿就能访问你的网站呢！这得需要好几个小时，为什么这么慢，我也不知道啊😯，吃顿饭，睡一觉，再看基本没问题就可以访问了，你猜你能看到绿锁了吗？哈哈哈😄！不一定。为什么？因为这跟你的网页源码有关，如果你用他人的源码，源码里有不安全的连接，绿锁是不会出现的，当然会出现灰色的锁，嘿嘿😜 怎么办？换源码。要是自己玩就写源码喽。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Danny</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dingshuguang.github.io/2019/08/02/2019-08-02-secure/">https://dingshuguang.github.io/2019/08/02/2019-08-02-secure/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dingshuguang.github.io" target="_blank">Danny's blog</a>！</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="https://res.cloudinary.com/ddsg/image/upload/v1654490052/flower/luobo1_a6kc7q.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/04/26/2020-4-26-web/"><img class="prev-cover" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_400/v1593395817/domenico-loia-hGV2TfOh0ns-unsplash_zrpn9j.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">如何建立自己的静态网页</div></div></a></div><div class="next-post pull-right"><a href="/2019/07/23/2019-07-23-website/"><img class="next-cover" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_400/v1593396410/halacious-tZc3vjPCk-Q-unsplash_xew9pw.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">建站分享</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'IbbfT8u0h3OfsOuz912KHBPH-gzGzoHsz',
+  appKey: 'zjgOj218GRnxCb4wt4Uy8wIs',
+  placeholder: '您有什么想说的吗？（填写邮箱可以收到回复提醒）',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By Danny</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+  pangu.autoSpacingPage()
+})</script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

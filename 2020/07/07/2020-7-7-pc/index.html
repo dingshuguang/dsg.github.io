@@ -1,0 +1,747 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PC一般操作技巧 | Danny's blog</title><meta name="description" content="关于打印机有时会遇到需要重启打印服务的时候，下面的命令是清除打印缓存，并重启打印服务。文件保存为bat格式。需要注意的是，要以管理员的身份运行！ 123456789101112131415161718192021@echo offtitle 清除打印缓存及重启打印服务mode con:cols&#x3D;60 lines&#x3D;10color 17@echo.@echo.@echo 正在停止打印服务....@ec"><meta name="keywords" content="PC"><meta name="author" content="Danny"><meta name="copyright" content="Danny"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dingshuguang.github.io/2020/07/07/2020-7-7-pc/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="PC一般操作技巧"><meta property="og:url" content="https://dingshuguang.github.io/2020/07/07/2020-7-7-pc/"><meta property="og:site_name" content="Danny's blog"><meta property="og:description" content="关于打印机有时会遇到需要重启打印服务的时候，下面的命令是清除打印缓存，并重启打印服务。文件保存为bat格式。需要注意的是，要以管理员的身份运行！ 123456789101112131415161718192021@echo offtitle 清除打印缓存及重启打印服务mode con:cols&#x3D;60 lines&#x3D;10color 17@echo.@echo.@echo 正在停止打印服务....@ec"><meta property="og:image" content="https://i.loli.net/2020/07/07/PgArVDhFq1Sdvke.jpg"><meta property="article:published_time" content="2020-07-07T08:00:00.000Z"><meta property="article:modified_time" content="2022-06-06T06:52:58.859Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="CCNA笔记" href="https://dingshuguang.github.io/2020/07/18/2020-7-18-ccna/"><link rel="next" title="Html5和Css3笔记" href="https://dingshuguang.github.io/2020/06/09/2020-6-09-html5css3/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"真誠,善良,忍耐,順其自然,堅韌","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于打印机"><span class="toc-number">1.</span> <span class="toc-text">关于打印机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于删除旧文件"><span class="toc-number">2.</span> <span class="toc-text">关于删除旧文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于cmd命令"><span class="toc-number">3.</span> <span class="toc-text">关于cmd命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#diskpart"><span class="toc-number">4.</span> <span class="toc-text">diskpart</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾清理"><span class="toc-number">5.</span> <span class="toc-text">垃圾清理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于Linux"><span class="toc-number">6.</span> <span class="toc-text">关于Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于系统维护"><span class="toc-number">7.</span> <span class="toc-text">关于系统维护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#win10-快捷键"><span class="toc-number">8.</span> <span class="toc-text">win10 快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常规快捷键"><span class="toc-number">8.1.</span> <span class="toc-text">常规快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#微标键快捷键"><span class="toc-number">8.2.</span> <span class="toc-text">微标键快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对话框快捷键"><span class="toc-number">8.3.</span> <span class="toc-text">对话框快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件管理器快捷键"><span class="toc-number">8.4.</span> <span class="toc-text">文件管理器快捷键</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于EXCEL"><span class="toc-number">9.</span> <span class="toc-text">关于EXCEL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#win10-删除没有权限的文件夹"><span class="toc-number">10.</span> <span class="toc-text">win10 删除没有权限的文件夹</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/07/07/PgArVDhFq1Sdvke.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Danny's blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">PC一般操作技巧</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-07 16:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-07</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2022-06-06 14:52:58"><i class="fas fa-history fa-fw"></i> 更新于 2022-06-06</span></time></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">3.9k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 13 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="关于打印机"><a href="#关于打印机" class="headerlink" title="关于打印机"></a>关于打印机</h3><p>有时会遇到需要重启打印服务的时候，下面的命令是清除打印缓存，并重启打印服务。文件保存为bat格式。需要注意的是，要以管理员的身份运行！</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">title</span> 清除打印缓存及重启打印服务</span><br><span class="line"><span class="built_in">mode</span> <span class="built_in">con</span>:cols=<span class="number">60</span> lines=<span class="number">10</span></span><br><span class="line"><span class="built_in">color</span> <span class="number">17</span></span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line">@<span class="built_in">echo</span> 正在停止打印服务....</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">net</span> stop spooler</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line">@<span class="built_in">echo</span> 正在清除打印缓存....</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">del</span>/f/q "C:\WINDOWS\system32\spool\PRINTERS\*.*"</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line">@<span class="built_in">echo</span> 正在启动打印服务....</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> spooler</span><br><span class="line">@<span class="built_in">echo</span>.</span><br><span class="line">@<span class="built_in">echo</span> 执行完成，退出。</span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="关于删除旧文件"><a href="#关于删除旧文件" class="headerlink" title="关于删除旧文件"></a>关于删除旧文件</h3><p>删除n天前的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rem 删除D:\temp目录下7天前的文件</span><br><span class="line">Forfiles &#x2F;p D:\temp &#x2F;s &#x2F;d -7 &#x2F;m *.* &#x2F;c &quot;cmd &#x2F;c del &#x2F;q &#x2F;f @path&quot;</span><br><span class="line"> </span><br><span class="line">rem 删除C:\inetpub\logs目录下14天前的文件</span><br><span class="line">Forfiles &#x2F;p C:\inetpub\logs &#x2F;s &#x2F;d -14 &#x2F;m *.* &#x2F;c &quot;cmd &#x2F;c del &#x2F;q &#x2F;f @path&quot;</span><br></pre></td></tr></table></figure>
+<p><code>rem</code>注释命令<br><code>/p</code> 指定要删除的目录</p>
+<p><code>/s</code> 表示递归搜索子目录</p>
+<p><code>/d</code> -14表示14天前的文件，-7表示7天前的文件</p>
+<p><code>/m *.*</code> 表示所有文件类型，如果要删除特定文件格式，可自行指定（如：只删除txt文件，可写成 *.txt ）</p>
+<p><code>/c</code> 自行指定的命令，后面双引号括起来的是删除文件命令</p>
+<p>自行指定的命令 <code>&quot;cmd /c del /q /f @path&quot;</code> 中：<br><code>/c</code> 表示执行完批处理命令后，关闭CMD窗口<br><code>del</code> 删除文件的命令<br><code>/q</code> 安静模式。删除全局通配符时，不要求确认<br><code>/f</code> 强制删除只读文件。<br>可用于Windows任务计划程序中，设定基本任务，这样系统会自动执行，省去了人工每天的操作。</p>
+<h3 id="关于cmd命令"><a href="#关于cmd命令" class="headerlink" title="关于cmd命令"></a>关于cmd命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">regedit.exe    打开注册表</span><br><span class="line">gpedit.msc-----组策略</span><br><span class="line">shutdown-------60秒倒计时关机命令</span><br><span class="line">osk------------打开屏幕键盘</span><br><span class="line">ipconfig-------查看网络ip</span><br><span class="line">dir------------查看当前目录下的文件</span><br><span class="line">DxDiag---------系统信息</span><br><span class="line">copy *.jpg d\a 把当前目录的jpg文件拷贝到d盘的a目录下</span><br><span class="line">move *.jpg ..  把当前目录的jpg文件剪切到上级目录下</span><br><span class="line">inetcpl.cpl ---internet属性设置</span><br><span class="line">control -------控制面板设置</span><br><span class="line">mmsys.cpl -----声音设定</span><br><span class="line">sysdm.cpl -----系统设定</span><br><span class="line">timedate.cpl --时间设定</span><br></pre></td></tr></table></figure>
+
+<h3 id="diskpart"><a href="#diskpart" class="headerlink" title="diskpart"></a>diskpart</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list disk 显示当前电脑的磁盘</span><br><span class="line">select disk x  选择一个磁盘</span><br><span class="line">clean   格式化</span><br><span class="line">exit  退出</span><br></pre></td></tr></table></figure>
+<h3 id="垃圾清理"><a href="#垃圾清理" class="headerlink" title="垃圾清理"></a>垃圾清理</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off </span><br><span class="line"><span class="built_in">echo</span> 正在清理系统垃圾文件，请稍等...... </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.tmp </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*._mp </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.log </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.gid </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.chk </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.old </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\recycled\*.* </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%windir%</span>\*.bak </span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%windir%</span>\prefetch\*.* </span><br><span class="line"><span class="built_in">rd</span> /s /q <span class="variable">%windir%</span>\temp &amp; <span class="built_in">md</span> <span class="variable">%windir%</span>\temp </span><br><span class="line"><span class="built_in">del</span> /f /q <span class="variable">%userprofile%</span>\cookies\*.* </span><br><span class="line"><span class="built_in">del</span> /f /q <span class="variable">%userprofile%</span>\recent\*.* </span><br><span class="line"><span class="built_in">del</span> /f /s /q "<span class="variable">%userprofile%</span>\Local Settings\Temporary Internet Files\*.*"</span><br><span class="line"><span class="built_in">del</span> /f /s /q "<span class="variable">%userprofile%</span>\Local Settings\Temp\*.*"</span><br><span class="line"><span class="built_in">del</span> /f /s /q "<span class="variable">%userprofile%</span>\recent\*.*"</span><br><span class="line"><span class="built_in">echo</span> 清理系统垃圾完成！</span><br></pre></td></tr></table></figure>
+<p>或者是 </p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off &amp; <span class="built_in">title</span> 清理系统垃圾</span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.tmp</span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\*.mp3</span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%systemdrive%</span>\recycled\*.*</span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%windir%</span>\*.bak</span><br><span class="line"><span class="built_in">del</span> /f /s /q <span class="variable">%windir%</span>\prefetch\*.*</span><br><span class="line"><span class="built_in">rd</span> /s /q <span class="variable">%windir%</span>\temp &amp; <span class="built_in">md</span> <span class="variable">%windir%</span>\temp</span><br><span class="line"><span class="built_in">del</span> /f /q <span class="variable">%userprofile%</span>\cookies\*.*</span><br><span class="line"><span class="built_in">del</span> /f /s /q "C:\Documents and Settings\Administrator\Local Settings\History"</span><br><span class="line"><span class="built_in">del</span> /f /s /q "C:\Documents and Settings\Administrator\Local Settings\Temporary Internet Files"</span><br><span class="line"><span class="built_in">del</span> /f /s /q "C:\Documents and Settings\Administrator\Local Settings\Temp"</span><br><span class="line"><span class="built_in">del</span> /f /s /q "C:\Documents and Settings\Administrator\Local Settings\Temp\_xl7vss_"</span><br></pre></td></tr></table></figure>
+<p><code>del</code> 命令的参数<br><code>/F</code>强制删除只读文件。<br><code>/S</code>从所有子目录删除指定文件。<br><code>/Q</code> 安静模式。删除全局通配符时，不要求确认。</p>
+<p><code>rd</code> 命令的参数<br><code>/s</code>除目录本身外，还将删除指定目录下的所有子目录和文件。用于删除目录树。<br><code>/q</code> 安静模式<br><code>/s</code>删除目录树时不要求确认。</p>
+<h3 id="关于Linux"><a href="#关于Linux" class="headerlink" title="关于Linux"></a>关于Linux</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pwd 查看当前目录</span><br><span class="line">cd - 返回之前目录</span><br><span class="line">cd ..返回上一个目录</span><br><span class="line">cd ~ 返回家目录</span><br><span class="line">touch a 创建文件a</span><br><span class="line">mkdir a 创建目录a</span><br><span class="line">mkdir -p a&#x2F;b 创建a目录和a目录下的b目录</span><br><span class="line">cp a b 复制文件a并更名为b</span><br><span class="line">cp a &#x2F;smp&#x2F; 将a复制到根目录下的smp目录下</span><br><span class="line">cp -r a b 复制a目录和a目录下的文件到b目录</span><br><span class="line">mv a b 把a重命名为b（前提是当前目录下没有b目录，如果有b目录就是移动剪切）</span><br><span class="line">chmod 777 a 修改a的权限</span><br><span class="line">chown user1 a 修改a所属为user1</span><br><span class="line">chgrp 修改属组</span><br><span class="line">rm a 删除a</span><br><span class="line">rm -r b 删除b目录</span><br></pre></td></tr></table></figure>
+<h3 id="关于系统维护"><a href="#关于系统维护" class="headerlink" title="关于系统维护"></a>关于系统维护</h3><p>slmgr.vbs -xpr 查看系统是否是永久激活<br>slmgr.vbs -dlv 查看系统激活信息</p>
+<p>win10专业版可以禁用系统更新—-&gt;gpedit.msc—&gt;计算机配置&gt;管理模板&gt;Windows组件&gt;Windows更新&gt;配置自动更新&gt;禁用。</p>
+<p>win10系统自带播放器HEVC视频扩展，没有这个扩展可能无法播放H265的视频，点击<a href="https://www.microsoft.com/zh-cn/p/hevc-video-extensions-from-device-manufacturer/9n4wgh0z6vhq?ranMID=24542&ranEAID=dquE8U2QoAw&ranSiteID=dquE8U2QoAw-t1lE6f.5izzFlpXjUNiHyg&epi=dquE8U2QoAw-t1lE6f.5izzFlpXjUNiHyg&irgwc=1&OCID=AID681541_aff_7593_1243925&tduid=%28ir__6dexjszp0skfrnb6xmlij6lydu2xmtaojxeumshs00%29%287593%29%281243925%29%28dquE8U2QoAw-t1lE6f.5izzFlpXjUNiHyg%29%28%29&irclickid=_6dexjszp0skfrnb6xmlij6lydu2xmtaojxeumshs00&activetab=pivot%3Aoverviewtab" target="_blank" rel="noopener">这里</a>可以下载来自于设备制造商的免费版。</p>
+<p>win10 删除右键新建菜单多余选项 &gt; regedit &gt; 计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Discardable\PostSetup\ShellNew  &gt;  打开classes  &gt;  删除多余选项 我这里删除了 .accdb .bmp .library-ms .lnk .mdb .pub .rtf .zip 。然后在定位到 HKEY_CLASSES_ROOT\ 下 ，找到刚才删除的对于项目下的 ShellNew 文件夹，将其删除，就完成了。</p>
+<h3 id="win10-快捷键"><a href="#win10-快捷键" class="headerlink" title="win10 快捷键"></a>win10 快捷键</h3><h4 id="常规快捷键"><a href="#常规快捷键" class="headerlink" title="常规快捷键"></a><span id="inline-green" >常规快捷键</span></h4><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ctrl + X</td>
+<td align="left">剪切选定项。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + C（或 Ctrl + Insert）</td>
+<td align="left">复制选定项。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + V（或 Shift + Insert）</td>
+<td align="left">粘贴选定项。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Z</td>
+<td align="left">撤消操作。</td>
+</tr>
+<tr>
+<td align="left">Alt + Tab</td>
+<td align="left">在打开的应用之间切换。</td>
+</tr>
+<tr>
+<td align="left">Alt + F4</td>
+<td align="left">关闭活动项，或者退出活动应用。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + L</td>
+<td align="left">锁定你的电脑。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + D</td>
+<td align="left">显示和隐藏桌面。</td>
+</tr>
+<tr>
+<td align="left">F2</td>
+<td align="left">重命名所选项目。</td>
+</tr>
+<tr>
+<td align="left">F3</td>
+<td align="left">在文件资源管理器中搜索文件或文件夹。</td>
+</tr>
+<tr>
+<td align="left">F4</td>
+<td align="left">在文件资源管理器中显示地址栏列表。</td>
+</tr>
+<tr>
+<td align="left">F5</td>
+<td align="left">刷新活动窗口。</td>
+</tr>
+<tr>
+<td align="left">F6</td>
+<td align="left">循环浏览窗口中或桌面上的屏幕元素。</td>
+</tr>
+<tr>
+<td align="left">F10</td>
+<td align="left">激活活动应用中的菜单栏。</td>
+</tr>
+<tr>
+<td align="left">Alt + F8</td>
+<td align="left">在登录屏幕上显示你的密码。</td>
+</tr>
+<tr>
+<td align="left">Alt + Esc</td>
+<td align="left">按项目打开顺序循环浏览。</td>
+</tr>
+<tr>
+<td align="left">Alt + 带下划线的字母</td>
+<td align="left">执行该字母相关的命令。</td>
+</tr>
+<tr>
+<td align="left">Alt + Enter</td>
+<td align="left">显示所选项目的属性。</td>
+</tr>
+<tr>
+<td align="left">Alt + 空格键</td>
+<td align="left">打开活动窗口的快捷菜单。</td>
+</tr>
+<tr>
+<td align="left">Alt + 向左键</td>
+<td align="left">返回。</td>
+</tr>
+<tr>
+<td align="left">Alt + 向右键</td>
+<td align="left">前进。</td>
+</tr>
+<tr>
+<td align="left">Alt + Page Up</td>
+<td align="left">向上移动一个屏幕。</td>
+</tr>
+<tr>
+<td align="left">Alt + Page Down</td>
+<td align="left">向下移动一个屏幕。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + F4</td>
+<td align="left">关闭活动文档（在可全屏显示并允许你同时打开多个文档的应用中）。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + A</td>
+<td align="left">选择文档或窗口中的所有项目。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + D（或 Delete）</td>
+<td align="left">删除选定项，将其移至回收站。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + R（或 F5）</td>
+<td align="left">刷新活动窗口。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Y</td>
+<td align="left">恢复操作。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 向右键</td>
+<td align="left">将光标移动到下一个字词的起始处。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 向左键</td>
+<td align="left">将光标移动到上一个字词的起始处。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 向下键</td>
+<td align="left">将光标移动到下一段落的起始处。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 向上键</td>
+<td align="left">将光标移动到上一段落的起始处。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Alt + Tab</td>
+<td align="left">使用箭头键在所有打开的应用之间进行切换。</td>
+</tr>
+<tr>
+<td align="left">Alt + Shift + 箭头键</td>
+<td align="left">当组或磁贴的焦点放在“开始”菜单上时，可将其朝指定方向移动。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + 箭头键</td>
+<td align="left">当磁贴的焦点放在“开始”菜单上时，将其移到另一个磁贴即可创建一个文件夹。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 箭头键</td>
+<td align="left">打开“开始”菜单后调整其大小。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 箭头键（移至某个项目）+ 空格键</td>
+<td align="left">选择窗口中或桌面上的多个单独项目。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift（及箭头键）</td>
+<td align="left">选择文本块。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Esc</td>
+<td align="left">打开“开始”菜单。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + Esc</td>
+<td align="left">打开任务管理器。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift</td>
+<td align="left">如果多种键盘布局可用，则可切换键盘布局。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 空格键</td>
+<td align="left">打开或关闭中文输入法编辑器 (IME)。</td>
+</tr>
+<tr>
+<td align="left">Shift + F10</td>
+<td align="left">显示选定项的快捷菜单。</td>
+</tr>
+<tr>
+<td align="left">按 Shift 与任何箭头键</td>
+<td align="left">在窗口中或桌面上选择多个项目，或在文档中选择文本。</td>
+</tr>
+<tr>
+<td align="left">Shift + Delete</td>
+<td align="left">删除选定项，无需先移动到回收站。</td>
+</tr>
+<tr>
+<td align="left">向右键</td>
+<td align="left">打开右侧的下一个菜单，或打开子菜单。</td>
+</tr>
+<tr>
+<td align="left">向左键</td>
+<td align="left">打开左侧的下一个菜单，或关闭子菜单。</td>
+</tr>
+<tr>
+<td align="left">Esc</td>
+<td align="left">停止或离开当前任务。</td>
+</tr>
+<tr>
+<td align="left">PrtScn</td>
+<td align="left">捕获整个屏幕的屏幕截图并将其复制到剪贴板。</td>
+</tr>
+</tbody></table>
+<h4 id="微标键快捷键"><a href="#微标键快捷键" class="headerlink" title="微标键快捷键"></a><span id="inline-green" >微标键快捷键</span></h4><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Windows 徽标键  + .</td>
+<td align="left">打开表情框</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键</td>
+<td align="left">打开或关闭“开始”菜单。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + A</td>
+<td align="left">打开操作中心。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + B</td>
+<td align="left">将焦点设置到通知区域。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + C</td>
+<td align="left">在侦听模式下打开 Cortana。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + C</td>
+<td align="left">打开超级按钮菜单。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + D</td>
+<td align="left">显示和隐藏桌面。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Alt + D</td>
+<td align="left">显示和隐藏桌面上的日期和时间。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + E</td>
+<td align="left">打开文件资源管理器。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + F</td>
+<td align="left">打开反馈中心并获取屏幕截图。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + G</td>
+<td align="left">打开游戏栏（当游戏处于打开状态时）。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键 ‌ + H</td>
+<td align="left">开始听写。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + I</td>
+<td align="left">打开设置。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键‌  + J</td>
+<td align="left">将焦点设置到可用的 Windows 提示。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + K</td>
+<td align="left">打开“连接”快速操作.</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + L</td>
+<td align="left">锁定你的电脑或切换帐户。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + M</td>
+<td align="left">最小化所有窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + O</td>
+<td align="left">锁定设备方向。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + P</td>
+<td align="left">选择演示显示模式。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + Q</td>
+<td align="left">打开快速助手。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + R</td>
+<td align="left">打开“运行”对话框。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + S</td>
+<td align="left">打开搜素。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + S</td>
+<td align="left">获取部分屏幕的屏幕截图。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + T</td>
+<td align="left">循环浏览任务栏上的应用。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + U</td>
+<td align="left">打开轻松使用设置中心。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + V</td>
+<td align="left">打开剪贴板。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + V</td>
+<td align="left">循环浏览通知。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + X</td>
+<td align="left">打开“快速链接”菜单。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Y</td>
+<td align="left">在 Windows Mixed Reality 与桌面之间切换输入。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Z</td>
+<td align="left">以全屏模式显示应用中可用的命令。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 句点 (.) 或分号 (;)</td>
+<td align="left">打开表情符号面板。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 逗号 (,)</td>
+<td align="left">临时速览桌面。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Pause</td>
+<td align="left">显示“系统属性”对话框。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + F</td>
+<td align="left">搜索电脑（如果已连接到网络）。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + M</td>
+<td align="left">还原桌面上的最小化窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 数字</td>
+<td align="left">打开桌面，然后启动固定到任务栏的应用（位于数字所指明的位置）。如果应用已处于运行状态，则切换至该应用。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + 数字</td>
+<td align="left">打开桌面，然后启动固定到任务栏的应用新实例（位于数字所指明的位置）。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + 数字</td>
+<td align="left">打开桌面，然后切换至固定到任务栏的应用的最后活动窗口（位于数字所指明的位置）。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Alt + 数字</td>
+<td align="left">打开桌面，然后打开固定到任务栏的应用的“跳转列表”（位于数字所指明的位置）。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + Shift + 数字</td>
+<td align="left">打开桌面，然后以管理员身份打开位于任务栏上指定位置的应用新实例。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Tab</td>
+<td align="left">打开任务视图。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 向上键</td>
+<td align="left">最大化窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 向下键</td>
+<td align="left">删除屏幕上的当前应用并最小化桌面窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 向左键</td>
+<td align="left">最大化屏幕左侧的应用或桌面窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 向右键</td>
+<td align="left">最大化屏幕右侧的应用或桌面窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Home</td>
+<td align="left">最小化活动桌面窗口之外的所有窗口（在第二个笔划时还原所有窗口）。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + 向上键</td>
+<td align="left">将桌面窗口拉伸至屏幕顶部和底部。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + 向下键</td>
+<td align="left">在垂直方向上还原/最小化活动桌面窗口，而宽度保持不变。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Shift + 向左键或向右键</td>
+<td align="left">将桌面上的应用或窗口从一台显示器移动至另一台显示器。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 空格键</td>
+<td align="left">切换输入语言和键盘布局。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + 空格键</td>
+<td align="left">对之前选择的输入所做的更改。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + Enter</td>
+<td align="left">打开“讲述人”。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键 + 加号 (+)</td>
+<td align="left">打开“放大镜”。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + 正斜杠 (/)</td>
+<td align="left">开始输入法复原流程。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + Ctrl + V</td>
+<td align="left">打开肩式分接设备。</td>
+</tr>
+</tbody></table>
+<h4 id="对话框快捷键"><a href="#对话框快捷键" class="headerlink" title="对话框快捷键"></a><span id="inline-green" >对话框快捷键</span></h4><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">F4</td>
+<td align="left">显示活动列表中的项目。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Tab</td>
+<td align="left">在选项卡中向前移动。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + Tab</td>
+<td align="left">在选项卡中向后移动。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 数字（数字 1–9）</td>
+<td align="left">移动到第 n 个选项卡。</td>
+</tr>
+<tr>
+<td align="left">Tab</td>
+<td align="left">在选项中向前移动。</td>
+</tr>
+<tr>
+<td align="left">Shift + Tab</td>
+<td align="left">在选项中向后移动。</td>
+</tr>
+<tr>
+<td align="left">Alt + 带下划线的字母</td>
+<td align="left">执行可与该字母结合使用的命令（或选择该选项）。</td>
+</tr>
+<tr>
+<td align="left">空格键</td>
+<td align="left">如果活动选项为复选框，则选择或清除复选框。</td>
+</tr>
+<tr>
+<td align="left">Backspace</td>
+<td align="left">如果在“另存为”或“打开”对话框中选择文件夹，则打开上一级别的文件夹。</td>
+</tr>
+<tr>
+<td align="left">箭头键</td>
+<td align="left">如果活动选项是一组选项按钮，请选择一个按钮。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h4 id="文件管理器快捷键"><a href="#文件管理器快捷键" class="headerlink" title="文件管理器快捷键"></a><span id="inline-green" >文件管理器快捷键</span></h4><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Alt + D</td>
+<td align="left">选择地址栏。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + E</td>
+<td align="left">选择搜索框。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + F</td>
+<td align="left">选择搜索框。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + N</td>
+<td align="left">打开新窗口。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + W</td>
+<td align="left">关闭活动窗口。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + 鼠标滚轮</td>
+<td align="left">更改文件和文件夹图标的大小和外观。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + E</td>
+<td align="left">显示选定文件夹上的所有文件夹。</td>
+</tr>
+<tr>
+<td align="left">Ctrl + Shift + N</td>
+<td align="left">创建新文件夹。</td>
+</tr>
+<tr>
+<td align="left">Num Lock + 星号 (*)</td>
+<td align="left">显示选定文件夹下的所有子文件夹。</td>
+</tr>
+<tr>
+<td align="left">Num Lock + 加号 (+)</td>
+<td align="left">显示选定文件夹中的内容。</td>
+</tr>
+<tr>
+<td align="left">Num Lock + 减号 (-)</td>
+<td align="left">折叠选定文件夹。</td>
+</tr>
+<tr>
+<td align="left">Alt + P</td>
+<td align="left">显示预览面板。</td>
+</tr>
+<tr>
+<td align="left">Alt + Enter</td>
+<td align="left">打开选定项的“属性”对话框。</td>
+</tr>
+<tr>
+<td align="left">Alt + 向右键</td>
+<td align="left">查看下一个文件夹。</td>
+</tr>
+<tr>
+<td align="left">Alt + 向上键</td>
+<td align="left">查看该文件夹所在的文件夹。</td>
+</tr>
+<tr>
+<td align="left">Alt + 向左键</td>
+<td align="left">查看上一个文件夹。</td>
+</tr>
+<tr>
+<td align="left">Backspace</td>
+<td align="left">查看上一个文件夹。</td>
+</tr>
+<tr>
+<td align="left">向右键</td>
+<td align="left">显示当前选择内容（如果已折叠），或选择第一个子文件夹。</td>
+</tr>
+<tr>
+<td align="left">向左键</td>
+<td align="left">折叠当前选择内容（如果已展开），或选择该文件夹所在的文件夹。</td>
+</tr>
+<tr>
+<td align="left">End</td>
+<td align="left">显示活动窗口底部。</td>
+</tr>
+<tr>
+<td align="left">Home</td>
+<td align="left">显示活动窗口顶部。</td>
+</tr>
+<tr>
+<td align="left">F11</td>
+<td align="left">最大化或最小化活动窗口。</td>
+</tr>
+<tr>
+<td align="left">Windows 徽标键  + I</td>
+<td align="left">打开设置。</td>
+</tr>
+</tbody></table>
+<h3 id="关于EXCEL"><a href="#关于EXCEL" class="headerlink" title="关于EXCEL"></a>关于EXCEL</h3><p>美化表格&gt;选中表格&gt;CTRL+T<br>添加数据条&gt;选中数据列&gt;开始菜单&gt;条件格式&gt;数据条  同时右键&gt;排序&gt;可选升序/降序<br>添加图表&gt;选中数据区&gt;F11生成&gt;可移动到sheet里<br>求和&gt;选中数据&gt;alt + “=”<br>去除小数点&gt;选中后CTRL + shift + 1  注意：这里实际值不会去除，只是显示会显示为四舍五入后的整数<br>添加倒计时&gt;选中要添加的单元格输入”=’实际日期’-today()” &gt; 右键单元格格式-常规  也可添加数据条</p>
+<a class="btn-beautify button--animated outline green larger" href="https://onedrive.gimhoy.com/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3gvcyFBaEJ4WXJGV1QzdGJoV3Nwa055SlF3TnFBUVA4.xlsx" target="_blank" rel="noopener" title="文件下载链接"><i class="far fa-hand-point-right fa-fw"></i> 文件下载链接 </a>
+
+<h3 id="win10-删除没有权限的文件夹"><a href="#win10-删除没有权限的文件夹" class="headerlink" title="win10 删除没有权限的文件夹"></a>win10 删除没有权限的文件夹</h3><p>win10 如果改过存储文件的路径，会生成windowsapp这个文件夹，如果你想删除它，发现是没有权限的，按照如下步骤即可删除。<br>点击文件夹–属性–安全–高级，查看所有者是不是本机用户名，如果不是更改为本机管理权限的用户名，点击更改–输入自己的用户名–点击检查用户名–确定。再点击高级选项会发现下边的添加按钮，点击添加–主体还是自己的用户名–权限是完全控制–确定。这时就可以删除了。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Danny</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dingshuguang.github.io/2020/07/07/2020-7-7-pc/">https://dingshuguang.github.io/2020/07/07/2020-7-7-pc/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dingshuguang.github.io" target="_blank">Danny's blog</a>！</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="https://res.cloudinary.com/ddsg/image/upload/v1654490052/flower/luobo1_a6kc7q.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/18/2020-7-18-ccna/"><img class="prev-cover" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_1920/v1593394961/taylor-vick-M5tzZtFCOfs-unsplash_rpv2ax.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CCNA笔记</div></div></a></div><div class="next-post pull-right"><a href="/2020/06/09/2020-6-09-html5css3/"><img class="next-cover" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_399/v1567212789/computer_vv5lii.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Html5和Css3笔记</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'IbbfT8u0h3OfsOuz912KHBPH-gzGzoHsz',
+  appKey: 'zjgOj218GRnxCb4wt4Uy8wIs',
+  placeholder: '您有什么想说的吗？（填写邮箱可以收到回复提醒）',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By Danny</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+  pangu.autoSpacingPage()
+})</script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

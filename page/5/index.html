@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Danny's blog</title><meta name="description" content="記憶碎片"><meta name="author" content="Danny"><meta name="copyright" content="Danny"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://dingshuguang.github.io/page/5/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Danny's blog"><meta property="og:url" content="https://dingshuguang.github.io/page/5/"><meta property="og:site_name" content="Danny's blog"><meta property="og:description" content="記憶碎片"><meta property="og:image" content="https://dingshuguang.github.io/img/avatar.png"><meta property="article:published_time" content="2022-06-06T07:05:31.964Z"><meta property="article:modified_time" content="2022-06-06T07:05:31.964Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"真誠,善良,忍耐,順其自然,堅韌","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://res.cloudinary.com/ddsg/image/upload/v1596013014/cf_q4cxej.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Danny's blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Danny's blog</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/dingshuguang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dingshuguang1@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/26/2020-4-26-web/" title="如何建立自己的静态网页">     <img class="post_bg" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_400/v1593395817/domenico-loia-hGV2TfOh0ns-unsplash_zrpn9j.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何建立自己的静态网页"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/26/2020-4-26-web/" title="如何建立自己的静态网页">如何建立自己的静态网页</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-26 00:00:00"><i class="far fa-calendar-alt"></i>2020-04-26</time></div><div class="content">我目前使用的是这个网站GitHub，github是全球最大的程序代码托管网站，几乎所有全世界所有的程序员都知道，而且上面有很多的源代码。GitHub官网在前两年吧，开放了GitHub pages功能，就是个人博客，其实他是让程序员有自己项目的一个展示平台，而且是免费的，非常的不错。但是他并不限制你必须是程序员，官网上有这样一段话“Create a blog and spread your ideas.Whatever you want!” 就是程序开源的这种精神。
+第一步，要在GitHub上建立自己的账户，打开GitHub.com，注册账户。填入用户名，邮箱（常用邮箱），密码。完成后进入自己的邮箱，点击链接激活账户。
+然后进入网站后，先建立自己的仓库（repository），点击create repository，然后输入自己的名字（随意），其他的不用填，直接点下面的建立仓库。之后就会自动跳转到代码页面。
+第二步，找网页模板。我现在用的是hexo的框架，也就是这个网页是使用hexo系统发布的，这个系统是台湾人开发的。在这里找喜欢的模板。 jekyll 模板地址。
+第三步，是把网页源码上 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/08/02/2019-08-02-secure/" title="给网站加个绿锁">     <img class="post_bg" data-src="https://res.cloudinary.com/ddsg/image/upload/v1593396236/timg_oc6lth.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给网站加个绿锁"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/08/02/2019-08-02-secure/" title="给网站加个绿锁">给网站加个绿锁</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2019-08-02 00:00:00"><i class="far fa-calendar-alt"></i>2019-08-02</time></div><div class="content">打开我的网站在网址的最左边出现一个小绿锁的标志，后边紧跟着是HTTPS，没错，这就是我说的绿锁。
+其实这个问题我研究好几天了，如果是单纯的博客，其实没有必要加上绿锁的，这个绿锁的意思是安全连接，也就是这个链接是经过加密的，主要用于需要保密的一些内容，比如私人的账号密码什么的。博客嘛，没有多大用，不过这样看起来是舒心多了，哈哈😄!!!
+我来说一下我都是怎么弄的。一个是自签名SSL，一个是别人签的，先说自签名证书。
+服务器都有SSL这个模块，它可以提供一些SSL证书相关的信息。比如它可以给你提供私钥和SRC，这两个文件是生成证书所需的文件。证书是需要有些机构签名的，也有自签名的。然后你如果能得到这两个文件，就找那些提供免费SSL的网站，填上它提供给你的信息，生成证书文件，然后再回到服务器上，填上证书文件，激活证书。大概是这个流程，不过我没有用这个自签名。
+通过一个加密中间商，也就是一个网站。方法可以有很多，同样，不同的服务器要求也不同。国内有免费的SSL，加密级别不同，有个人、企业之分，个人选择一般DV级别的就可以了，如果是开个商业性质的网站，还是选择高级版的吧。
+在cloudflare ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/07/23/2019-07-23-website/" title="建站分享">     <img class="post_bg" data-src="https://res.cloudinary.com/ddsg/image/upload/c_scale,w_400/v1593396410/halacious-tZc3vjPCk-Q-unsplash_xew9pw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="建站分享"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/07/23/2019-07-23-website/" title="建站分享">建站分享</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2019-07-23 00:00:00"><i class="far fa-calendar-alt"></i>2019-07-23</time></div><div class="content">昨晚自己捣腾了一下网站，结果把原来的网站源码给误删了，经过一天的时间，又恢复了，换了主题。可惜我的第一篇文章已经找不到了，怎么办？我想还是大致的重新写一下吧。
+首先是需要域名、服务器和源码。域名申请可以有很多网站，就像上次我说的付费的你也可以考虑，根据后缀名的不同，价格不同，如果你想要稳定点或者选择更多一些的域名，我推荐namecheap这个网站，在上面可以购买.me .cc .com等等的后缀，当然都是一级域名了。如果你不想要付费的，推荐freenom.com这个知名度很高的域名申请站了，这个站也可以申请一级域名，到期再续就可以了，国内可以上。
+域名搞定后，下一步是服务器。服务器也有很多，国内的服务器依然是需要备案、审核、实名认证等等一大堆复杂的手续，还是要选择国外的，至少我是这么想的。推荐的网站是qvqyun.cn 和 infinityfree.net，这两个我都用过，第一个是很便宜的，第二个完全免费当然也可以升级付费用户，这个网站如果你没有域名的话，它会给你免费建个域名，那就是二级域名了，域名的托管什么的它都包了，哈哈，比较全面的一个，如果你不想要二级域名也可以填自己的一级域名。 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Danny</div><div class="author-info__description">記憶碎片</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">23</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dingshuguang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:dingshuguang1@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">很长时间没有更新了呀</div></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/CAD/' style='font-size:18px; color:rgb(97, 167, 92)'>CAD</a><a href='/tags/CCNA/' style='font-size:16px; color:rgb(197, 124, 158)'>CCNA</a><a href='/tags/FTP/' style='font-size:19px; color:rgb(26, 112, 21)'>FTP</a><a href='/tags/PC/' style='font-size:20px; color:rgb(95, 121, 176)'>PC</a><a href='/tags/SSL/' style='font-size:21px; color:rgb(177, 20, 121)'>SSL</a><a href='/tags/cakewalk/' style='font-size:18px; color:rgb(78, 143, 18)'>cakewalk</a><a href='/tags/css3-html5/' style='font-size:17px; color:rgb(173, 27, 22)'>css3 html5</a><a href='/tags/git/' style='font-size:18px; color:rgb(50, 50, 91)'>git</a><a href='/tags/gitalk/' style='font-size:18px; color:rgb(64, 122, 170)'>gitalk</a><a href='/tags/hexo/' style='font-size:21px; color:rgb(137, 5, 191)'>hexo</a><a href='/tags/imovie9/' style='font-size:21px; color:rgb(12, 66, 158)'>imovie9</a><a href='/tags/js/' style='font-size:17px; color:rgb(160, 17, 3)'>js</a><a href='/tags/py/' style='font-size:21px; color:rgb(172, 41, 69)'>py</a><a href='/tags/switch/' style='font-size:16px; color:rgb(29, 92, 78)'>switch</a><a href='/tags/ubuntu/' style='font-size:21px; color:rgb(148, 154, 55)'>ubuntu</a><a href='/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/' style='font-size:16px; color:rgb(93, 55, 116)'>个人博客</a><a href='/tags/%E7%89%B9%E5%86%99/' style='font-size:19px; color:rgb(30, 12, 93)'>特写</a><a href='/tags/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/' style='font-size:16px; color:rgb(143, 65, 175)'>静态网页</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">23</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="7/23/2019 10:20:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">32k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By Danny</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+  pangu.autoSpacingPage()
+})</script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "你从哪里来？ 要到哪里去。".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: false,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '你从哪里来？ 要到哪里去。'
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
