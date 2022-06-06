@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: S.Ding's blog
+title: Danny's blog
 subtitle: ''
 description: '記憶碎片'
-keywords: 
-author: S.Ding
+keywords:
+author: Danny
 language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://dingshuguang.ml
+url: https://dingshuguang.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -131,6 +131,6 @@ tag_cloud:
     textFont: sans-serif, "Lucida Grande"
     textColor:  "#00BFFF"
     textHeight: 25
-    outlineColor:  
+    outlineColor:
     maxSpeed: 0.1
     pauseOnSelected: false # true 意味着当选中对应 tag 时,停止转动
