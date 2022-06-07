@@ -125,7 +125,7 @@ cover:
   # left/right/both
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
-  default_cover: 
+  default_cover:
     - /img/ingmar.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
@@ -357,7 +357,7 @@ gitter:
 
 since: 2019
 
-footer_custom_text: 
+footer_custom_text:
 
 footer_copyright: true
 
@@ -386,12 +386,12 @@ tencent_analytics:
 google_adsense:
   enable: false
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client: 
+  client:
   enable_page_level_ads: false
 
 # Insert ads manually (手動插入廣告)
 # ad:
-#   index: 
+#   index:
 #   aside:
 #   post:
 
@@ -517,7 +517,7 @@ ClickShowText:
 
 # Default display mode (網站默認的顯示模式)
 # light (default) / dark
-display_mode: dark
+display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
@@ -529,7 +529,7 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  font-family: 
+  font-family:
   code-font:
 
 # Font settings for the site title and site subtitle
